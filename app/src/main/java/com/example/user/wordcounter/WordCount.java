@@ -8,7 +8,6 @@ import android.widget.EditText;
 
 public class WordCount {
 
-    String words;
 
 
 

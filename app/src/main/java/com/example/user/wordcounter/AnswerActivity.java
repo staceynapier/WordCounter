@@ -16,7 +16,7 @@ public class AnswerActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        int result = extras.getInt("result");
+        String result = extras.getString("result");
 
         answerText.setText(result);
     }

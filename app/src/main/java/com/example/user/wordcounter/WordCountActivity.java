@@ -20,14 +20,18 @@ public class WordCountActivity extends AppCompatActivity {
 
         counterEditText = (EditText)findViewById(R.id.counter_text);
         button = (Button)findViewById(R.id.button);
+
+        WordCount wordCount = new WordCount();
+
     }
 
     public void onPressButton(View button){
-        Log.d(getClass().toString(), "Button was pressed");
-        String counter = counterEditText.getText().toString();
-        Log.d(getClass().toString(), "The words entered were '" + counter + "'");
+//        Log.d(getClass().toString(), "Button was pressed");
+        String words = counterEditText.getText().toString();
+//        Log.d(getClass().toString(), "The words entered were '" + words + "'");
         WordCount wordCount = new WordCount();
-        int result = WordCount.countMe(counter);
+        Integer wordNum = wordCount.countMe(words);
+        String result = wordNum.toString();
 
         Intent intent = new Intent(this, AnswerActivity.class); //where you are, where you are going
         intent.putExtra("result", result);
