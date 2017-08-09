@@ -1,8 +1,8 @@
 package com.example.user.wordcounter;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ButtonBarLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,5 +26,11 @@ public class WordCountActivity extends AppCompatActivity {
         Log.d(getClass().toString(), "Button was pressed");
         String counter = counterEditText.getText().toString();
         Log.d(getClass().toString(), "The words entered were '" + counter + "'");
+        WordCount wordCount = new WordCount();
+        int result = WordCount.countMe(counter);
+
+        Intent intent = new Intent(this, AnswerActivity.class); //where you are, where you are going
+        intent.putExtra("result", result);
+        startActivity(intent);
     }
 }
